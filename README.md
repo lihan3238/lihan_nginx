@@ -15,3 +15,12 @@
 - ssl：根据情况修改证书文件
 - conf.d：根据情况修改配置文件
 - conf：根据情况修改配置文件
+- html：新增网站放在这里
+- - 例如，新增网站 `gameUper`，则在`html`目录下新建`gameUper`目录，然后在`gameUper`目录下放置网站文件 html css 等
+- - 然后，在`default.conf`中新增配置:
+```nginx
+    location /gameUper/ {
+        alias /usr/share/nginx/html/gameUper/;
+        index index.html;
+    }
+```
